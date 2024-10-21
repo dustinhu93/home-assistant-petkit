@@ -1,6 +1,5 @@
 {
   "name": "PetKit",
   "render_readme": true,
-  "country": "JP",
   "homeassistant": "2024.8.0b0",
 }
