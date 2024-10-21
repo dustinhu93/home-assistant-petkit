@@ -187,6 +187,11 @@ class PetWeight(CoordinatorEntity, NumberEntity):
     async def async_set_native_value(self, value: int) -> None:
         """Update the current value."""
 
+        if value==0:
+            from .const import LOGGER
+            LOGGER.log(20,"Got value 0. Ignored")
+            return
+
         if self.hass.config.units is METRIC_SYSTEM:
             # Always send value with one decimal point in case user sends more decimal points or none
             converted_value = round(value, 1)
